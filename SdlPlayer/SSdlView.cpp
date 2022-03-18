@@ -29,7 +29,13 @@ void SSdlView::UninitSdl()
 	SDL_Quit();
 }
 
-SSdlView::SSdlView(void):m_sdlHost(this),m_sdlWnd(NULL),m_sdlRenderer(NULL),m_wndSurface(NULL),m_wndTexture(NULL)
+SSdlView::SSdlView(void)
+:m_sdlHost(this)
+,m_sdlWnd(NULL)
+,m_sdlRenderer(NULL)
+,m_wndSurface(NULL)
+,m_wndTexture(NULL)
+,m_bNeedFlush(FALSE)
 {
 }
 
@@ -178,8 +184,7 @@ void SSdlView::OnSize(UINT nType, CSize size)
 				SDL_FreeSurface(m_wndSurface);
 				m_wndSurface = NULL;
 			}
-			SDL_RenderFlush(m_sdlRenderer);
-
+			m_bNeedFlush = TRUE;
 			IBitmapS *pCache = m_sdlHost.GetCache();
 			LPBYTE pBit = (LPBYTE)pCache->GetPixelBits();
 			m_wndSurface = SDL_CreateRGBSurface(SDL_SWSURFACE,w,h,32,Rmask,Gmask,Bmask,Amask);
@@ -196,6 +201,12 @@ void SSdlView::OnSize(UINT nType, CSize size)
 SDL_Renderer * SSdlView::GetSdlRenderer()
 {
 	m_cs.Enter();
+	if(m_bNeedFlush)
+	{
+		m_cs.Leave();
+		FlushSdl();
+		m_cs.Enter();
+	}
 	return m_sdlRenderer;
 }
 
@@ -214,6 +225,19 @@ void SSdlView::ReleaseSdlRenderer(SDL_Renderer *pRenderer)
 BOOL SSdlView::OnHandleEvent(IEvtArgs *pEvt)
 {
 	return GetContainer()->OnFireEvent(pEvt);
+}
+
+void SSdlView::FlushSdl()
+{
+	m_sdlHost.SendMessage(UM_FLUSHSDL);
+}
+
+void SSdlView::OnFlushSdl()
+{
+	m_cs.Enter();
+	SDL_RenderClear(m_sdlRenderer);
+	SDL_RenderFlush(m_sdlRenderer);
+	m_cs.Leave();
 }
 
 SNSEND
