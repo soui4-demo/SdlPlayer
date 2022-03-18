@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL2", "SDL2\SDL2.vcproj", "{60DE1549-A467-3756-9882-B4141AE97845}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SdlPlayer", "SdlPlayer\SdlPlayer.vcproj", "{E5C53BF9-56FC-3217-9B78-060BA56A229E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{60DE1549-A467-3756-9882-B4141AE97845} = {60DE1549-A467-3756-9882-B4141AE97845}
+		{60DE1549-A467-3756-9882-B4141AE97845} = {60DE1549-A467-3756-9882-B4141AE97845}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60DE1549-A467-3756-9882-B4141AE97845}.Debug|Win32.ActiveCfg = Debug|Win32
+		{60DE1549-A467-3756-9882-B4141AE97845}.Debug|Win32.Build.0 = Debug|Win32
+		{60DE1549-A467-3756-9882-B4141AE97845}.Release|Win32.ActiveCfg = Release|Win32
+		{60DE1549-A467-3756-9882-B4141AE97845}.Release|Win32.Build.0 = Release|Win32
+		{E5C53BF9-56FC-3217-9B78-060BA56A229E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E5C53BF9-56FC-3217-9B78-060BA56A229E}.Debug|Win32.Build.0 = Debug|Win32
+		{E5C53BF9-56FC-3217-9B78-060BA56A229E}.Release|Win32.ActiveCfg = Release|Win32
+		{E5C53BF9-56FC-3217-9B78-060BA56A229E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

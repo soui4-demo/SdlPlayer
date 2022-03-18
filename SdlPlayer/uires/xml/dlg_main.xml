@@ -1,0 +1,18 @@
+﻿<SOUI name="mainWindow" title="@string/title" bigIcon="ICON_LOGO:32" smallIcon="ICON_LOGO:16" margin="5,5,5,5"  resizable="1" wndType="appMain"
+appWnd="1"
+translucent="0" 
+>
+  <root skin="_skin.sys.wnd.bkgnd" cache="1"  width="600" height="400" >
+    <window pos="5,[2,-5,-5" layout="vbox">
+      <window size="-2,30" layout="hbox" gravity="center">
+        <text text="url:"/>
+        <edit size="0,-2" weight="1" name="edit_url" text="http://ks-flv-ipv6.yy.com/live/15013_xv_22490906_22490906_0_1_0-15013_xa_22490906_22490906_0_0_0-0-0-1-3142326-17-1647571502783126.flv?codec=orig&appid=15013&secret=3de098a49e4a9c3243c19a9269854451&t=1647657903&r=extend_bc&playeruid=50045626" margin="1,1,1,1" colorBkgnd="@color/white"/>
+        <button size="100,-2" name="btn_play" text="play"/>
+        <button size="100,-2" name="btn_stop" text="stop"/>
+      </window>
+      <sdlView size="-2,0" weight="1" name="sld_view" colorBkgnd="RGBA(255,0,0,128)">
+        <button size="100,50" pos="|0,|0" offset="-0.5,-0.5" text="test" name="btn_test"/>
+      </sdlView>
+    </window>
+  </root>
+</SOUI>

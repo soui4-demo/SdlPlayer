@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="9,00"
+	Name="SDL2"
+	ProjectGUID="{60DE1549-A467-3756-9882-B4141AE97845}"
+	Keyword="Qt4VSv1.0">
+	<Platforms>
+		<Platform
+			Name="Win32" />
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="..\Release\"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="1"
+			ConfigurationType="2"
+			IntermediateDirectory="release\"
+			UseOfMfc="0">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories=".,.,include,WinSdk7.1\include,.,$(SOUI4PATH)/utilities/include,$(SOUI4PATH)/soui/include,$(SOUI4PATH)/components,$(SOUI4PATH)/config,..\..\soui4.git\tools\mkspecs\win32-msvc2008"
+				AdditionalOptions="/MP"
+				AssemblerListingLocation="release\"
+				DebugInformationFormat="0"
+				ExceptionHandling="1"
+				GeneratePreprocessedFile="0"
+				ObjectFile="release\"
+				Optimization ="2"
+				PreprocessorDefinitions="_WINDOWS,UNICODE,WIN32,DLL_EXPORT,QT_NO_DYNAMIC_CAST,NDEBUG"
+				ProgramDataBaseFileName="$(IntDir)"
+				RuntimeLibrary="0"
+				SuppressStartupBanner="true"
+				TreatWChar_tAsBuiltInType="true"
+				WarningLevel="3" />
+			<Tool
+				Name="VCCustomBuildTool" />
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="utilities4.lib soui4.lib setupapi.lib winmm.lib imm32.lib version.lib"
+				AdditionalLibraryDirectories="$(SOUI4PATH)\bin"
+				DataExecutionPrevention="true"
+				GenerateDebugInformation="false"
+				IgnoreImportLibrary="true"
+				LinkIncremental="1"
+				LinkTimeCodeGeneration="0"
+				OutputFile="$(OutDir)\SDL2.dll"
+				ProgramDatabaseFile=""
+				RandomizedBaseAddress="true"
+				SubSystem="2"
+				SuppressStartupBanner="true"
+				TargetMachine="1" />
+			<Tool
+				Name="VCManifestTool" />
+			<Tool
+				Name="VCMIDLTool"
+				DefaultCharType="0"
+				EnableErrorChecks="1"
+				WarningLevel="0" />
+			<Tool
+				Name="VCPostBuildEventTool" />
+			<Tool
+				Name="VCPreBuildEventTool" />
+			<Tool
+				Name="VCPreLinkEventTool" />
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_WINDOWS,UNICODE,WIN32,DLL_EXPORT,QT_NO_DYNAMIC_CAST" />
+		</Configuration>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="..\Debug\"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="1"
+			ConfigurationType="2"
+			IntermediateDirectory="debug\"
+			UseOfMfc="0">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories=".,.,include,WinSdk7.1\include,.,$(SOUI4PATH)/utilities/include,$(SOUI4PATH)/soui/include,$(SOUI4PATH)/components,$(SOUI4PATH)/config,..\..\soui4.git\tools\mkspecs\win32-msvc2008"
+				AdditionalOptions="/MP"
+				AssemblerListingLocation="debug\"
+				DebugInformationFormat="3"
+				ExceptionHandling="1"
+				GeneratePreprocessedFile="0"
+				ObjectFile="debug\"
+				Optimization ="4"
+				PreprocessorDefinitions="_WINDOWS,UNICODE,WIN32,DLL_EXPORT,QT_NO_DYNAMIC_CAST"
+				ProgramDataBaseFileName="$(IntDir)"
+				RuntimeLibrary="1"
+				SuppressStartupBanner="true"
+				TreatWChar_tAsBuiltInType="true"
+				WarningLevel="3" />
+			<Tool
+				Name="VCCustomBuildTool" />
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="utilities4d.lib soui4d.lib setupapi.lib winmm.lib imm32.lib version.lib"
+				AdditionalLibraryDirectories="$(SOUI4PATH)\bin"
+				DataExecutionPrevention="true"
+				GenerateDebugInformation="true"
+				IgnoreImportLibrary="true"
+				LinkTimeCodeGeneration="0"
+				OutputFile="$(OutDir)\SDL2.dll"
+				ProgramDatabaseFile=""
+				RandomizedBaseAddress="true"
+				SubSystem="2"
+				SuppressStartupBanner="true"
+				TargetMachine="1" />
+			<Tool
+				Name="VCManifestTool" />
+			<Tool
+				Name="VCMIDLTool"
+				DefaultCharType="0"
+				EnableErrorChecks="1"
+				WarningLevel="0" />
+			<Tool
+				Name="VCPostBuildEventTool" />
+			<Tool
+				Name="VCPreBuildEventTool" />
+			<Tool
+				Name="VCPreLinkEventTool" />
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_WINDOWS,UNICODE,WIN32,DLL_EXPORT,QT_NO_DYNAMIC_CAST,_DEBUG" />
+		</Configuration>
+	</Configurations>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			<File
+				RelativePath="src\SDL.c" />
+			<File
+				RelativePath="src\video\SDL_RLEaccel.c" />
+			<File
+				RelativePath="src\SDL_assert.c" />
+			<File
+				RelativePath="src\atomic\SDL_atomic.c" />
+			<File
+				RelativePath="src\audio\SDL_audio.c" />
+			<File
+				RelativePath="src\audio\SDL_audiocvt.c" />
+			<File
+				RelativePath="src\audio\SDL_audiodev.c" />
+			<File
+				RelativePath="src\audio\SDL_audiotypecvt.c" />
+			<File
+				RelativePath="src\render\software\SDL_blendfillrect.c" />
+			<File
+				RelativePath="src\render\software\SDL_blendline.c" />
+			<File
+				RelativePath="src\render\software\SDL_blendpoint.c" />
+			<File
+				RelativePath="src\video\SDL_blit.c" />
+			<File
+				RelativePath="src\video\SDL_blit_0.c" />
+			<File
+				RelativePath="src\video\SDL_blit_1.c" />
+			<File
+				RelativePath="src\video\SDL_blit_A.c" />
+			<File
+				RelativePath="src\video\SDL_blit_N.c" />
+			<File
+				RelativePath="src\video\SDL_blit_auto.c" />
+			<File
+				RelativePath="src\video\SDL_blit_copy.c" />
+			<File
+				RelativePath="src\video\SDL_blit_slow.c" />
+			<File
+				RelativePath="src\video\SDL_bmp.c" />
+			<File
+				RelativePath="src\video\SDL_clipboard.c" />
+			<File
+				RelativePath="src\events\SDL_clipboardevents.c" />
+			<File
+				RelativePath="src\cpuinfo\SDL_cpuinfo.c" />
+			<File
+				RelativePath="src\stdlib\SDL_crc32.c" />
+			<File
+				RelativePath="src\render\SDL_d3dmath.c" />
+			<File
+				RelativePath="src\SDL_dataqueue.c" />
+			<File
+				RelativePath="src\haptic\windows\SDL_dinputhaptic.c" />
+			<File
+				RelativePath="src\joystick\windows\SDL_dinputjoystick.c" />
+			<File
+				RelativePath="src\audio\directsound\SDL_directsound.c" />
+			<File
+				RelativePath="src\audio\disk\SDL_diskaudio.c" />
+			<File
+				RelativePath="src\events\SDL_displayevents.c" />
+			<File
+				RelativePath="src\render\software\SDL_drawline.c" />
+			<File
+				RelativePath="src\render\software\SDL_drawpoint.c" />
+			<File
+				RelativePath="src\events\SDL_dropevents.c" />
+			<File
+				RelativePath="src\audio\dummy\SDL_dummyaudio.c" />
+			<File
+				RelativePath="src\sensor\dummy\SDL_dummysensor.c" />
+			<File
+				RelativePath="src\dynapi\SDL_dynapi.c" />
+			<File
+				RelativePath="src\video\SDL_egl.c" />
+			<File
+				RelativePath="src\SDL_error.c" />
+			<File
+				RelativePath="src\events\SDL_events.c" />
+			<File
+				RelativePath="src\video\SDL_fillrect.c" />
+			<File
+				RelativePath="src\joystick\SDL_gamecontroller.c" />
+			<File
+				RelativePath="src\events\SDL_gesture.c" />
+			<File
+				RelativePath="src\stdlib\SDL_getenv.c" />
+			<File
+				RelativePath="src\haptic\SDL_haptic.c" />
+			<File
+				RelativePath="src\core\windows\SDL_hid.c" />
+			<File
+				RelativePath="src\hidapi\SDL_hidapi.c" />
+			<File
+				RelativePath="src\joystick\hidapi\SDL_hidapi_gamecube.c" />
+			<File
+				RelativePath="src\joystick\hidapi\SDL_hidapi_luna.c" />
+			<File
+				RelativePath="src\joystick\hidapi\SDL_hidapi_ps4.c" />
+			<File
+				RelativePath="src\joystick\hidapi\SDL_hidapi_ps5.c" />
+			<File
+				RelativePath="src\joystick\hidapi\SDL_hidapi_rumble.c" />
+			<File
+				RelativePath="src\joystick\hidapi\SDL_hidapi_stadia.c" />
+			<File
+				RelativePath="src\joystick\hidapi\SDL_hidapi_switch.c" />
+			<File
+				RelativePath="src\joystick\hidapi\SDL_hidapi_xbox360.c" />
+			<File
+				RelativePath="src\joystick\hidapi\SDL_hidapi_xbox360w.c" />
+			<File
+				RelativePath="src\joystick\hidapi\SDL_hidapi_xboxone.c" />
+			<File
+				RelativePath="src\joystick\hidapi\SDL_hidapijoystick.c" />
+			<File
+				RelativePath="src\SDL_hints.c" />
+			<File
+				RelativePath="src\stdlib\SDL_iconv.c" />
+			<File
+				RelativePath="src\joystick\SDL_joystick.c" />
+			<File
+				RelativePath="src\events\SDL_keyboard.c" />
+			<File
+				RelativePath="src\locale\SDL_locale.c" />
+			<File
+				RelativePath="src\SDL_log.c" />
+			<File
+				RelativePath="src\stdlib\SDL_malloc.c" />
+			<File
+				RelativePath="src\audio\SDL_mixer.c" />
+			<File
+				RelativePath="src\joystick\windows\SDL_mmjoystick.c" />
+			<File
+				RelativePath="src\events\SDL_mouse.c" />
+			<File
+				RelativePath="src\video\dummy\SDL_nullevents.c" />
+			<File
+				RelativePath="src\video\dummy\SDL_nullframebuffer.c" />
+			<File
+				RelativePath="src\video\dummy\SDL_nullvideo.c" />
+			<File
+				RelativePath="src\video\SDL_pixels.c" />
+			<File
+				RelativePath="src\power\SDL_power.c" />
+			<File
+				RelativePath="src\stdlib\SDL_qsort.c" />
+			<File
+				RelativePath="src\events\SDL_quit.c" />
+			<File
+				RelativePath="src\joystick\windows\SDL_rawinputjoystick.c" />
+			<File
+				RelativePath="src\video\SDL_rect.c" />
+			<File
+				RelativePath="src\render\SDL_render.c" />
+			<File
+				RelativePath="src\render\direct3d\SDL_render_d3d.c" />
+			<File
+				RelativePath="src\render\direct3d11\SDL_render_d3d11.c" />
+			<File
+				RelativePath="src\render\opengl\SDL_render_gl.c" />
+			<File
+				RelativePath="src\render\opengles2\SDL_render_gles2.c" />
+			<File
+				RelativePath="src\render\software\SDL_render_sw.c" />
+			<File
+				RelativePath="src\render\software\SDL_rotate.c" />
+			<File
+				RelativePath="src\file\SDL_rwops.c" />
+			<File
+				RelativePath="src\sensor\SDL_sensor.c" />
+			<File
+				RelativePath="src\render\direct3d\SDL_shaders_d3d.c" />
+			<File
+				RelativePath="src\render\direct3d11\SDL_shaders_d3d11.c" />
+			<File
+				RelativePath="src\render\opengl\SDL_shaders_gl.c" />
+			<File
+				RelativePath="src\render\opengles2\SDL_shaders_gles2.c" />
+			<File
+				RelativePath="src\video\SDL_shape.c" />
+			<File
+				RelativePath="src\atomic\SDL_spinlock.c" />
+			<File
+				RelativePath="src\stdlib\SDL_stdlib.c" />
+			<File
+				RelativePath="src\video\SDL_stretch.c" />
+			<File
+				RelativePath="src\stdlib\SDL_string.c" />
+			<File
+				RelativePath="src\stdlib\SDL_strtokr.c" />
+			<File
+				RelativePath="src\video\SDL_surface.c" />
+			<File
+				RelativePath="src\thread\generic\SDL_syscond.c" />
+			<File
+				RelativePath="src\thread\windows\SDL_syscond_srw.c" />
+			<File
+				RelativePath="src\filesystem\windows\SDL_sysfilesystem.c" />
+			<File
+				RelativePath="src\haptic\dummy\SDL_syshaptic.c" />
+			<File
+				RelativePath="src\joystick\dummy\SDL_sysjoystick.c" />
+			<File
+				RelativePath="src\loadso\windows\SDL_sysloadso.c" />
+			<File
+				RelativePath="src\locale\windows\SDL_syslocale.c" />
+			<File
+				RelativePath="src\thread\windows\SDL_sysmutex.c" />
+			<File
+				RelativePath="src\power\windows\SDL_syspower.c" />
+			<File
+				RelativePath="src\thread\windows\SDL_syssem.c" />
+			<File
+				RelativePath="src\thread\windows\SDL_systhread.c" />
+			<File
+				RelativePath="src\timer\windows\SDL_systimer.c" />
+			<File
+				RelativePath="src\thread\windows\SDL_systls.c" />
+			<File
+				RelativePath="src\misc\windows\SDL_sysurl.c" />
+			<File
+				RelativePath="src\thread\SDL_thread.c" />
+			<File
+				RelativePath="src\timer\SDL_timer.c" />
+			<File
+				RelativePath="src\events\SDL_touch.c" />
+			<File
+				RelativePath="src\misc\SDL_url.c" />
+			<File
+				RelativePath="src\video\SDL_video.c" />
+			<File
+				RelativePath="src\joystick\virtual\SDL_virtualjoystick.c" />
+			<File
+				RelativePath="src\video\SDL_vulkan_utils.c" />
+			<File
+				RelativePath="src\audio\wasapi\SDL_wasapi.c" />
+			<File
+				RelativePath="src\audio\wasapi\SDL_wasapi_win32.c" />
+			<File
+				RelativePath="src\audio\SDL_wave.c" />
+			<File
+				RelativePath="src\events\SDL_windowevents.c" />
+			<File
+				RelativePath="src\core\windows\SDL_windows.c" />
+			<File
+				RelativePath="src\joystick\windows\SDL_windows_gaming_input.c" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsclipboard.c" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsevents.c" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsframebuffer.c" />
+			<File
+				RelativePath="src\haptic\windows\SDL_windowshaptic.c" />
+			<File
+				RelativePath="src\joystick\windows\SDL_windowsjoystick.c" />
+			<File
+				RelativePath="src\video\windows\SDL_windowskeyboard.c" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsmessagebox.c" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsmodes.c" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsmouse.c" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsopengl.c" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsopengles.c" />
+			<File
+				RelativePath="src\sensor\windows\SDL_windowssensor.c" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsshape.c" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsvideo.c" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsvulkan.c" />
+			<File
+				RelativePath="src\video\windows\SDL_windowswindow.c" />
+			<File
+				RelativePath="src\audio\winmm\SDL_winmm.c" />
+			<File
+				RelativePath="src\core\windows\SDL_xinput.c" />
+			<File
+				RelativePath="src\haptic\windows\SDL_xinputhaptic.c" />
+			<File
+				RelativePath="src\joystick\windows\SDL_xinputjoystick.c" />
+			<File
+				RelativePath="src\video\SDL_yuv.c" />
+			<File
+				RelativePath="src\render\SDL_yuv_sw.c" />
+			<File
+				RelativePath="src\libm\e_atan2.c" />
+			<File
+				RelativePath="src\libm\e_exp.c" />
+			<File
+				RelativePath="src\libm\e_fmod.c" />
+			<File
+				RelativePath="src\libm\e_log.c" />
+			<File
+				RelativePath="src\libm\e_log10.c" />
+			<File
+				RelativePath="src\libm\e_pow.c" />
+			<File
+				RelativePath="src\libm\e_rem_pio2.c" />
+			<File
+				RelativePath="src\libm\e_sqrt.c" />
+			<File
+				RelativePath="src\libm\k_cos.c" />
+			<File
+				RelativePath="src\libm\k_rem_pio2.c" />
+			<File
+				RelativePath="src\libm\k_sin.c" />
+			<File
+				RelativePath="src\libm\k_tan.c" />
+			<File
+				RelativePath="src\libm\s_atan.c" />
+			<File
+				RelativePath="src\libm\s_copysign.c" />
+			<File
+				RelativePath="src\libm\s_cos.c" />
+			<File
+				RelativePath="src\libm\s_fabs.c" />
+			<File
+				RelativePath="src\libm\s_floor.c" />
+			<File
+				RelativePath="src\libm\s_scalbn.c" />
+			<File
+				RelativePath="src\libm\s_sin.c" />
+			<File
+				RelativePath="src\libm\s_tan.c" />
+			<File
+				RelativePath="src\video\yuv2rgb\yuv_rgb.c" />
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc;xsd"
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File
+				RelativePath="include\SDL.h" />
+			<File
+				RelativePath="src\video\SDL_RLEaccel_c.h" />
+			<File
+				RelativePath="include\SDL_assert.h" />
+			<File
+				RelativePath="include\SDL_atomic.h" />
+			<File
+				RelativePath="include\SDL_audio.h" />
+			<File
+				RelativePath="src\audio\SDL_audio_c.h" />
+			<File
+				RelativePath="src\audio\SDL_audiodev_c.h" />
+			<File
+				RelativePath="include\SDL_bits.h" />
+			<File
+				RelativePath="src\render\software\SDL_blendfillrect.h" />
+			<File
+				RelativePath="src\render\software\SDL_blendline.h" />
+			<File
+				RelativePath="include\SDL_blendmode.h" />
+			<File
+				RelativePath="src\render\software\SDL_blendpoint.h" />
+			<File
+				RelativePath="src\video\SDL_blit.h" />
+			<File
+				RelativePath="src\video\SDL_blit_auto.h" />
+			<File
+				RelativePath="src\video\SDL_blit_copy.h" />
+			<File
+				RelativePath="src\video\SDL_blit_slow.h" />
+			<File
+				RelativePath="include\SDL_clipboard.h" />
+			<File
+				RelativePath="src\events\SDL_clipboardevents_c.h" />
+			<File
+				RelativePath="include\SDL_config.h" />
+			<File
+				RelativePath="include\SDL_config_windows.h" />
+			<File
+				RelativePath="include\SDL_copying.h" />
+			<File
+				RelativePath="include\SDL_cpuinfo.h" />
+			<File
+				RelativePath="src\render\SDL_d3dmath.h" />
+			<File
+				RelativePath="src\SDL_dataqueue.h" />
+			<File
+				RelativePath="src\haptic\windows\SDL_dinputhaptic_c.h" />
+			<File
+				RelativePath="src\joystick\windows\SDL_dinputjoystick_c.h" />
+			<File
+				RelativePath="src\audio\directsound\SDL_directsound.h" />
+			<File
+				RelativePath="src\core\windows\SDL_directx.h" />
+			<File
+				RelativePath="src\audio\disk\SDL_diskaudio.h" />
+			<File
+				RelativePath="src\events\SDL_displayevents_c.h" />
+			<File
+				RelativePath="src\render\software\SDL_draw.h" />
+			<File
+				RelativePath="src\render\software\SDL_drawline.h" />
+			<File
+				RelativePath="src\render\software\SDL_drawpoint.h" />
+			<File
+				RelativePath="src\events\SDL_dropevents_c.h" />
+			<File
+				RelativePath="src\audio\dummy\SDL_dummyaudio.h" />
+			<File
+				RelativePath="src\sensor\dummy\SDL_dummysensor.h" />
+			<File
+				RelativePath="src\dynapi\SDL_dynapi.h" />
+			<File
+				RelativePath="src\dynapi\SDL_dynapi_overrides.h" />
+			<File
+				RelativePath="src\dynapi\SDL_dynapi_procs.h" />
+			<File
+				RelativePath="include\SDL_egl.h" />
+			<File
+				RelativePath="include\SDL_endian.h" />
+			<File
+				RelativePath="include\SDL_error.h" />
+			<File
+				RelativePath="src\SDL_error_c.h" />
+			<File
+				RelativePath="include\SDL_events.h" />
+			<File
+				RelativePath="src\events\SDL_events_c.h" />
+			<File
+				RelativePath="include\SDL_filesystem.h" />
+			<File
+				RelativePath="include\SDL_gamecontroller.h" />
+			<File
+				RelativePath="src\joystick\SDL_gamecontrollerdb.h" />
+			<File
+				RelativePath="include\SDL_gesture.h" />
+			<File
+				RelativePath="src\events\SDL_gesture_c.h" />
+			<File
+				RelativePath="src\render\opengles\SDL_glesfuncs.h" />
+			<File
+				RelativePath="src\render\opengl\SDL_glfuncs.h" />
+			<File
+				RelativePath="include\SDL_haptic.h" />
+			<File
+				RelativePath="src\core\windows\SDL_hid.h" />
+			<File
+				RelativePath="src\joystick\hidapi\SDL_hidapijoystick_c.h" />
+			<File
+				RelativePath="include\SDL_hints.h" />
+			<File
+				RelativePath="include\SDL_joystick.h" />
+			<File
+				RelativePath="src\joystick\SDL_joystick_c.h" />
+			<File
+				RelativePath="include\SDL_keyboard.h" />
+			<File
+				RelativePath="src\events\SDL_keyboard_c.h" />
+			<File
+				RelativePath="include\SDL_keycode.h" />
+			<File
+				RelativePath="include\SDL_loadso.h" />
+			<File
+				RelativePath="include\SDL_locale.h" />
+			<File
+				RelativePath="include\SDL_log.h" />
+			<File
+				RelativePath="include\SDL_main.h" />
+			<File
+				RelativePath="include\SDL_messagebox.h" />
+			<File
+				RelativePath="include\SDL_misc.h" />
+			<File
+				RelativePath="include\SDL_mouse.h" />
+			<File
+				RelativePath="src\events\SDL_mouse_c.h" />
+			<File
+				RelativePath="include\SDL_mutex.h" />
+			<File
+				RelativePath="include\SDL_name.h" />
+			<File
+				RelativePath="src\video\dummy\SDL_nullevents_c.h" />
+			<File
+				RelativePath="src\video\dummy\SDL_nullframebuffer_c.h" />
+			<File
+				RelativePath="src\video\dummy\SDL_nullvideo.h" />
+			<File
+				RelativePath="include\SDL_opengl.h" />
+			<File
+				RelativePath="include\SDL_opengl_glext.h" />
+			<File
+				RelativePath="include\SDL_opengles.h" />
+			<File
+				RelativePath="include\SDL_opengles2.h" />
+			<File
+				RelativePath="include\SDL_opengles2_gl2.h" />
+			<File
+				RelativePath="include\SDL_opengles2_gl2ext.h" />
+			<File
+				RelativePath="include\SDL_opengles2_gl2platform.h" />
+			<File
+				RelativePath="include\SDL_opengles2_khrplatform.h" />
+			<File
+				RelativePath="include\SDL_pixels.h" />
+			<File
+				RelativePath="src\video\SDL_pixels_c.h" />
+			<File
+				RelativePath="include\SDL_platform.h" />
+			<File
+				RelativePath="include\SDL_power.h" />
+			<File
+				RelativePath="include\SDL_quit.h" />
+			<File
+				RelativePath="src\joystick\windows\SDL_rawinputjoystick_c.h" />
+			<File
+				RelativePath="include\SDL_rect.h" />
+			<File
+				RelativePath="src\video\SDL_rect_c.h" />
+			<File
+				RelativePath="include\SDL_render.h" />
+			<File
+				RelativePath="src\render\software\SDL_render_sw_c.h" />
+			<File
+				RelativePath="include\SDL_revision.h" />
+			<File
+				RelativePath="src\render\software\SDL_rotate.h" />
+			<File
+				RelativePath="include\SDL_rwops.h" />
+			<File
+				RelativePath="include\SDL_scancode.h" />
+			<File
+				RelativePath="include\SDL_sensor.h" />
+			<File
+				RelativePath="src\sensor\SDL_sensor_c.h" />
+			<File
+				RelativePath="src\render\direct3d\SDL_shaders_d3d.h" />
+			<File
+				RelativePath="src\render\direct3d11\SDL_shaders_d3d11.h" />
+			<File
+				RelativePath="src\render\opengl\SDL_shaders_gl.h" />
+			<File
+				RelativePath="include\SDL_shape.h" />
+			<File
+				RelativePath="src\video\SDL_shape_internals.h" />
+			<File
+				RelativePath="include\SDL_stdinc.h" />
+			<File
+				RelativePath="include\SDL_surface.h" />
+			<File
+				RelativePath="src\audio\SDL_sysaudio.h" />
+			<File
+				RelativePath="src\thread\generic\SDL_syscond_c.h" />
+			<File
+				RelativePath="src\events\SDL_sysevents.h" />
+			<File
+				RelativePath="src\haptic\SDL_syshaptic.h" />
+			<File
+				RelativePath="src\joystick\SDL_sysjoystick.h" />
+			<File
+				RelativePath="src\locale\SDL_syslocale.h" />
+			<File
+				RelativePath="src\thread\windows\SDL_sysmutex_c.h" />
+			<File
+				RelativePath="src\render\SDL_sysrender.h" />
+			<File
+				RelativePath="src\sensor\SDL_syssensor.h" />
+			<File
+				RelativePath="include\SDL_system.h" />
+			<File
+				RelativePath="src\thread\SDL_systhread.h" />
+			<File
+				RelativePath="src\thread\windows\SDL_systhread_c.h" />
+			<File
+				RelativePath="src\video\SDL_sysvideo.h" />
+			<File
+				RelativePath="include\SDL_syswm.h" />
+			<File
+				RelativePath="include\SDL_test.h" />
+			<File
+				RelativePath="include\SDL_test_assert.h" />
+			<File
+				RelativePath="include\SDL_test_common.h" />
+			<File
+				RelativePath="include\SDL_test_compare.h" />
+			<File
+				RelativePath="include\SDL_test_crc32.h" />
+			<File
+				RelativePath="include\SDL_test_font.h" />
+			<File
+				RelativePath="include\SDL_test_fuzzer.h" />
+			<File
+				RelativePath="include\SDL_test_harness.h" />
+			<File
+				RelativePath="include\SDL_test_images.h" />
+			<File
+				RelativePath="include\SDL_test_log.h" />
+			<File
+				RelativePath="include\SDL_test_md5.h" />
+			<File
+				RelativePath="include\SDL_test_random.h" />
+			<File
+				RelativePath="include\SDL_thread.h" />
+			<File
+				RelativePath="src\thread\SDL_thread_c.h" />
+			<File
+				RelativePath="include\SDL_timer.h" />
+			<File
+				RelativePath="src\timer\SDL_timer_c.h" />
+			<File
+				RelativePath="include\SDL_touch.h" />
+			<File
+				RelativePath="src\events\SDL_touch_c.h" />
+			<File
+				RelativePath="include\SDL_types.h" />
+			<File
+				RelativePath="include\SDL_version.h" />
+			<File
+				RelativePath="include\SDL_video.h" />
+			<File
+				RelativePath="src\joystick\virtual\SDL_virtualjoystick_c.h" />
+			<File
+				RelativePath="src\video\windows\SDL_vkeys.h" />
+			<File
+				RelativePath="include\SDL_vulkan.h" />
+			<File
+				RelativePath="src\video\SDL_vulkan_internal.h" />
+			<File
+				RelativePath="src\audio\wasapi\SDL_wasapi.h" />
+			<File
+				RelativePath="src\audio\SDL_wave.h" />
+			<File
+				RelativePath="src\events\SDL_windowevents_c.h" />
+			<File
+				RelativePath="src\core\windows\SDL_windows.h" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsclipboard.h" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsevents.h" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsframebuffer.h" />
+			<File
+				RelativePath="src\haptic\windows\SDL_windowshaptic_c.h" />
+			<File
+				RelativePath="src\joystick\windows\SDL_windowsjoystick_c.h" />
+			<File
+				RelativePath="src\video\windows\SDL_windowskeyboard.h" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsmessagebox.h" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsmodes.h" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsmouse.h" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsopengl.h" />
+			<File
+				RelativePath="src\sensor\windows\SDL_windowssensor.h" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsshape.h" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsvideo.h" />
+			<File
+				RelativePath="src\video\windows\SDL_windowsvulkan.h" />
+			<File
+				RelativePath="src\video\windows\SDL_windowswindow.h" />
+			<File
+				RelativePath="src\audio\winmm\SDL_winmm.h" />
+			<File
+				RelativePath="src\core\windows\SDL_xinput.h" />
+			<File
+				RelativePath="src\haptic\windows\SDL_xinputhaptic_c.h" />
+			<File
+				RelativePath="src\joystick\windows\SDL_xinputjoystick_c.h" />
+			<File
+				RelativePath="src\video\SDL_yuv_c.h" />
+			<File
+				RelativePath="src\render\SDL_yuv_sw_c.h" />
+			<File
+				RelativePath="include\begin_code.h" />
+			<File
+				RelativePath="src\events\blank_cursor.h" />
+			<File
+				RelativePath="include\close_code.h" />
+			<File
+				RelativePath="src\joystick\controller_type.h" />
+			<File
+				RelativePath="src\events\default_cursor.h" />
+			<File
+				RelativePath="src\hidapi\hidapi\hidapi.h" />
+			<File
+				RelativePath="src\libm\math_libm.h" />
+			<File
+				RelativePath="src\libm\math_private.h" />
+			<File
+				RelativePath="src\video\windows\wmmsg.h" />
+			<File
+				RelativePath="src\video\yuv2rgb\yuv_rgb.h" />
+		</Filter>
+		<File
+			RelativePath="src\main\windows\version.rc" />
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>
