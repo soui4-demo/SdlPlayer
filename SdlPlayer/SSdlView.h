@@ -70,9 +70,9 @@ public:
 	void EndSdlRender();
 	SDL_Renderer * GetSdlRenderer();
 	void ReleaseSdlRenderer(SDL_Renderer *pRenderer);
-public:
-	SWindow * FindChildByID(int nID, int nDeep /* = -1 */) OVERRIDE;
-	SWindow * FindChildByName(LPCWSTR strName, int nDeep /* = -1 */) OVERRIDE;
+protected:
+	SWindow * _FindChildByID(int nID, int nDeep /* = -1 */) OVERRIDE;
+	SWindow * _FindChildByName(const SStringW &strName, int nDeep /* = -1 */) OVERRIDE;
 
 protected:
 	BOOL OnHostCacheUpdated(SHostWnd *pHost,IBitmapS * pCache, LPCRECT pRect) OVERRIDE;

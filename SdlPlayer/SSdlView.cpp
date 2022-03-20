@@ -82,12 +82,12 @@ BOOL SSdlView::InitFromXml(THIS_ IXmlNode *pNode)
 	return TRUE;
 }
 
-SWindow * SSdlView::FindChildByID(int nID, int nDeep /* = -1 */)
+SWindow * SSdlView::_FindChildByID(int nID, int nDeep /* = -1 */)
 {
 	return m_sdlHost.FindChildByID(nID,nDeep);
 }
 
-SWindow * SSdlView::FindChildByName(LPCWSTR strName, int nDeep /* = -1 */)
+SWindow * SSdlView::_FindChildByName(const SStringW &strName, int nDeep /* = -1 */)
 {
 	return m_sdlHost.FindChildByName(strName,nDeep);
 }
