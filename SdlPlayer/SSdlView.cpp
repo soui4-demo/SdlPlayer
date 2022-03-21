@@ -113,6 +113,7 @@ BOOL SSdlView::StartSdlRender()
 	m_wndTexture = SDL_CreateTextureFromSurface( m_sdlRenderer, m_wndSurface );
 	SDL_SetTextureBlendMode( m_wndTexture, SDL_BLENDMODE_BLEND );
 
+	m_sdlHost.SetPaintRoot(FALSE);
 
 	return TRUE;
 }
@@ -140,6 +141,7 @@ void SSdlView::EndSdlRender()
 		SDL_DestroyWindow(m_sdlWnd);
 		m_sdlWnd = NULL;
 	}
+	m_sdlHost.SetPaintRoot(TRUE);
 }
 
 BOOL SSdlView::OnHostCacheUpdated(SHostWnd *pHost,IBitmapS * pCache, LPCRECT pRect)
@@ -151,8 +153,7 @@ BOOL SSdlView::OnHostCacheUpdated(SHostWnd *pHost,IBitmapS * pCache, LPCRECT pRe
 	if(m_wndSurface && m_wndTexture)
 	{
 		LPBYTE pBit = (LPBYTE)pCache->GetPixelBits();
-		SDL_Rect rcSdl={pRect->left,pRect->top,RectWidth(pRect),RectHeight(pRect)};
-		SDL_UpdateTexture(m_wndTexture,&rcSdl,pBit,rc.Width()*4);
+		SDL_UpdateTexture(m_wndTexture,NULL,pBit,rc.Width()*4);
 		bRet = TRUE;
 	}
 	m_cs.Leave();

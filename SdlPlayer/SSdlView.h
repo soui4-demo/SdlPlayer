@@ -15,13 +15,19 @@ struct IListener
 };
 
 public:
-	SSdlHost(IListener *pListener):m_listener(pListener){}
+	SSdlHost(IListener *pListener):m_listener(pListener),m_bPaintRoot(TRUE){}
 
 	IBitmapS * GetCache(){
 		if(!m_memRT)
 			return NULL;
 		return (IBitmapS*) m_memRT->GetCurrentObject(OT_BITMAP);
 	}
+
+	void SetPaintRoot(BOOL bPaintRoot){
+		m_bPaintRoot = bPaintRoot;
+		GetRoot()->Invalidate();
+	}
+
 protected:
 	BOOL OnCacheUpdated(IBitmapS * pCache, LPCRECT pRect){
 		if(!m_listener) return FALSE;
@@ -34,6 +40,9 @@ protected:
 			return FALSE;
 		return m_listener->OnHandleEvent(pEvt);
 	}
+	virtual BOOL PaintRoot() const{
+		return m_bPaintRoot;
+	}
 private:
 	LRESULT OnFlushSdl(UINT uMsg,WPARAM,LPARAM)
 	{
@@ -41,6 +50,7 @@ private:
 		return 0;
 	}
 	IListener * m_listener;
+	BOOL		m_bPaintRoot;
 	BEGIN_MSG_MAP_EX(SSdlHost)
 		MESSAGE_HANDLER_EX(UM_FLUSHSDL,OnFlushSdl)
 		CHAIN_MSG_MAP(SHostWnd)
