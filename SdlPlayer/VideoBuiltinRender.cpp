@@ -95,7 +95,8 @@ void SDL2BuiltinRender::doRendering(const IAVframe* frame) {
   }
   resetTexture(m_sdl2Render,frame->width(), frame->height());
   if (!m_sdl2Texture) {
-    return;
+	 m_sdlView->ReleaseSdlRenderer(m_sdl2Render);
+     return;
   }
 
   int line1Offset = frame->lineSize()[0] * frame->height();

@@ -230,7 +230,9 @@ BOOL SSdlView::OnHandleEvent(IEvtArgs *pEvt)
 
 void SSdlView::FlushSdl()
 {
-	m_sdlHost.SendMessage(UM_FLUSHSDL);
+	//使用一个超时来防止UI线程正在调用stop导致UI线程等待的情况下程序卡死。
+	DWORD_PTR lResult = 0;
+	::SendMessageTimeout(m_sdlHost.m_hWnd,UM_FLUSHSDL,0,0,SMTO_ABORTIFHUNG,10,&lResult);
 }
 
 void SSdlView::OnFlushSdl()
