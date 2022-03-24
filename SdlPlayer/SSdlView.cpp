@@ -103,7 +103,7 @@ BOOL SSdlView::StartSdlRender()
 		return FALSE;
 
 	//create texture for window cache
-	CRect rc = m_sdlHost.GetWindowRect();
+	CRect rc = m_sdlHost.GetClientRect();
 
 	IBitmapS *pCache = m_sdlHost.GetCache();
 	LPBYTE pBit = (LPBYTE)pCache->GetPixelBits();
@@ -149,7 +149,7 @@ BOOL SSdlView::OnHostCacheUpdated(SHostWnd *pHost,IBitmapS * pCache, LPCRECT pRe
 	BOOL bRet = FALSE;
 	//update texture for window
 	m_cs.Enter();
-	CRect rc = m_sdlHost.GetWindowRect();
+	CRect rc = m_sdlHost.GetClientRect();
 	if(m_wndSurface && m_wndTexture)
 	{
 		LPBYTE pBit = (LPBYTE)pCache->GetPixelBits();
@@ -215,7 +215,7 @@ void SSdlView::ReleaseSdlRenderer(SDL_Renderer *pRenderer)
 {
 	if(pRenderer && m_wndTexture)
 	{
-		CRect rc = m_sdlHost.GetWindowRect();
+		CRect rc = m_sdlHost.GetClientRect();
 		SDL_Rect sdlRect={rc.left,rc.top,rc.Width(),rc.Height()};
 		SDL_RenderCopy(pRenderer,m_wndTexture,NULL,&sdlRect);
 		SDL_RenderPresent(pRenderer);
