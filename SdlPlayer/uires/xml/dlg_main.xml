@@ -19,7 +19,7 @@ translucent="0"
         <window size="0,0" weight="1"/>
         <window size="-2,30" layout="hbox" gravity="center">
           <text text="url:"/>
-          <edit size="0,-2" weight="1" name="edit_url" text="http://bd-flv.yy.com/live/15013_xv_54880976_54880976_0_1_0-15013_xa_54880976_54880976_0_0_0-0-0-1-15568054-17-1647848735980338.flv?codec=orig&appid=15013&secret=926e1dc9680e7bd093de4ad532b1f731&t=1647935403&r=enter&playeruid=50045626" margin="1,1,1,1" colorBkgnd="@color/white"/>
+          <edit size="0,-2" weight="1" name="edit_url" text="d:\\test2.mp4" margin="1,1,1,1" colorBkgnd="@color/white"/>
           <button size="100,-2" name="btn_play" text="play"/>
         </window>
         <window size="0,0" weight="1"/>

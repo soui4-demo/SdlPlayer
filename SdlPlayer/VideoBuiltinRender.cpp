@@ -88,7 +88,7 @@ void SDL2BuiltinRender::UpdateRenderRect(const IAVframe* frame) {
   checkUpdateRect(frame);
 }
 
-void SDL2BuiltinRender::doRendering(const IAVframe* frame) {
+void SDL2BuiltinRender::doRendering(IAVframe* frame) {
 	SDL_Renderer * m_sdl2Render = m_sdlView->GetSdlRenderer();
   if (!m_sdl2Render) {
 	  return;
@@ -111,6 +111,7 @@ void SDL2BuiltinRender::doRendering(const IAVframe* frame) {
   SDL_RenderCopy(m_sdl2Render, m_sdl2Texture, NULL, &m_renderRect);
 
 	m_sdlView->ReleaseSdlRenderer(m_sdl2Render);
+	m_lastFrame = frame;
 }
 
 #define FFALIGN(x, a) (((x)+(a)-1)&~((a)-1))
@@ -268,6 +269,31 @@ void SDL2BuiltinRender::checkUpdateRect(const IAVframe* frame) {
     m_expectH = FFALIGN(m_expectH, 4);
   }
   return;
+}
+
+void SDL2BuiltinRender::rerender()
+{
+	if(m_lastFrame)
+	{
+		IAVframe *frame = m_lastFrame;
+		UpdateRenderRect(frame);
+
+		IAVframe* dstFrame = NULL;
+		AVPixelFormat targetFormat = format();
+
+		if (expectWidth() != frame->width() || expectHeight() != frame->height()
+			|| frame->format() != targetFormat) {
+				int res = m_pTransVod->scale(frame, expectWidth(), expectHeight(), targetFormat, &dstFrame);
+				if (res != expectHeight()) {
+					return;
+				}
+		}
+		else {
+			dstFrame = frame;
+		}
+
+		doRendering(dstFrame);
+	}
 }
 
 

@@ -148,7 +148,6 @@ BOOL SSdlView::OnHostCacheUpdated(SHostWnd *pHost,IBitmapS * pCache, LPCRECT pRe
 {
 	BOOL bRet = FALSE;
 	//update texture for window
-	m_cs.Enter();
 	CRect rc = m_sdlHost.GetClientRect();
 	if(m_wndSurface && m_wndTexture)
 	{
@@ -156,7 +155,6 @@ BOOL SSdlView::OnHostCacheUpdated(SHostWnd *pHost,IBitmapS * pCache, LPCRECT pRe
 		SDL_UpdateTexture(m_wndTexture,NULL,pBit,rc.Width()*4);
 		bRet = TRUE;
 	}
-	m_cs.Leave();
 	return bRet;
 }
 
@@ -172,7 +170,6 @@ void SSdlView::OnSize(UINT nType, CSize size)
 		m_sdlHost.MoveWindow(rc.left,rc.top,w,h);
 
 		//update window texture
-		m_cs.Enter();
 		if(m_sdlRenderer)
 		{
 			if(m_wndTexture)
@@ -194,19 +191,15 @@ void SSdlView::OnSize(UINT nType, CSize size)
 			m_wndTexture = SDL_CreateTextureFromSurface( m_sdlRenderer, m_wndSurface );
 			SDL_SetTextureBlendMode( m_wndTexture, SDL_BLENDMODE_BLEND );
 		}
-		m_cs.Leave();
 	}
 }
 
 
 SDL_Renderer * SSdlView::GetSdlRenderer()
 {
-	m_cs.Enter();
 	if(m_bNeedFlush)
 	{
-		m_cs.Leave();
-		FlushSdl();
-		m_cs.Enter();
+		//FlushSdl();
 	}
 	return m_sdlRenderer;
 }
@@ -220,7 +213,6 @@ void SSdlView::ReleaseSdlRenderer(SDL_Renderer *pRenderer)
 		SDL_RenderCopy(pRenderer,m_wndTexture,NULL,&sdlRect);
 		SDL_RenderPresent(pRenderer);
 	}
-	m_cs.Leave();
 }
 
 BOOL SSdlView::OnHandleEvent(IEvtArgs *pEvt)
@@ -230,17 +222,8 @@ BOOL SSdlView::OnHandleEvent(IEvtArgs *pEvt)
 
 void SSdlView::FlushSdl()
 {
-	//使用一个超时来防止UI线程正在调用stop导致UI线程等待的情况下程序卡死。
-	DWORD_PTR lResult = 0;
-	::SendMessageTimeout(m_sdlHost.m_hWnd,UM_FLUSHSDL,0,0,SMTO_ABORTIFHUNG,10,&lResult);
-}
-
-void SSdlView::OnFlushSdl()
-{
-	m_cs.Enter();
 	SDL_RenderClear(m_sdlRenderer);
 	SDL_RenderFlush(m_sdlRenderer);
-	m_cs.Leave();
 }
 
 SNSEND

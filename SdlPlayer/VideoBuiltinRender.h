@@ -31,7 +31,7 @@ class CVideoBuiltinRender: public IUnknown, public CUnknown {
   }
 
  protected:
-  virtual void doRendering(const IAVframe* frame) = 0;
+  virtual void doRendering(IAVframe* frame) = 0;
 
 
   SSdlView* m_sdlView;
@@ -53,10 +53,9 @@ class SDL2BuiltinRender : public CVideoBuiltinRender{
   ~SDL2BuiltinRender();
 
   void UpdateRenderRect(const IAVframe* frame) override;
-  void doRendering(const IAVframe* frame) override;
+  void doRendering(IAVframe* frame) override;
 
-  bool init(void);
-
+  void rerender();
  private:
   void resetRenderRect(void);
   void resetRect(int w, int h);
@@ -64,6 +63,7 @@ class SDL2BuiltinRender : public CVideoBuiltinRender{
   void checkUpdateRect(const IAVframe* frame);
 
   SDL_Texture* m_sdl2Texture ;
+  SComPtr<IAVframe> m_lastFrame;
 
   /**
    * 上一次初始化m_sdl2Texture时使用的像素宽高，

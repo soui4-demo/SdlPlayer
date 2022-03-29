@@ -3,7 +3,6 @@
 
 SNSBEGIN
 
-#define UM_FLUSHSDL (WM_USER+100)
 class SSdlHost : public SHostWnd
 {
 public:
@@ -11,7 +10,6 @@ struct IListener
 {
 	virtual BOOL OnHostCacheUpdated(SHostWnd *pHost,IBitmapS * pCache, LPCRECT pRect) = NULL;
 	virtual BOOL OnHandleEvent(IEvtArgs *pEvt) = NULL;
-	virtual void OnFlushSdl() = 0;
 };
 
 public:
@@ -44,17 +42,8 @@ protected:
 		return m_bPaintRoot;
 	}
 private:
-	LRESULT OnFlushSdl(UINT uMsg,WPARAM,LPARAM)
-	{
-		m_listener->OnFlushSdl();
-		return 0;
-	}
 	IListener * m_listener;
 	BOOL		m_bPaintRoot;
-	BEGIN_MSG_MAP_EX(SSdlHost)
-		MESSAGE_HANDLER_EX(UM_FLUSHSDL,OnFlushSdl)
-		CHAIN_MSG_MAP(SHostWnd)
-	END_MSG_MAP()
 };
 
 class SSdlView : public SWindow, SSdlHost::IListener
@@ -68,7 +57,6 @@ protected:
 	SDL_Surface* m_wndSurface;
 	SDL_Texture * m_wndTexture;
 	BOOL m_bNeedFlush;
-	SCriticalSection m_cs;
 public:
 	SSdlView(void);
 	~SSdlView(void);
@@ -83,13 +71,11 @@ public:
 protected:
 	SWindow * _FindChildByID(int nID, int nDeep /* = -1 */) OVERRIDE;
 	SWindow * _FindChildByName(const SStringW &strName, int nDeep /* = -1 */) OVERRIDE;
+	void FlushSdl();
 
 protected:
 	BOOL OnHostCacheUpdated(SHostWnd *pHost,IBitmapS * pCache, LPCRECT pRect) OVERRIDE;
 	BOOL OnHandleEvent(IEvtArgs *pEvt) OVERRIDE;
-	void OnFlushSdl() OVERRIDE;
-
-	void FlushSdl();
 public:
 	HWND GetHwnd() const{return m_sdlHost.m_hWnd;}
 protected:
