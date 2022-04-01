@@ -8,15 +8,15 @@ translucent="0"
              colorInactiveTitle="@color/white"
              layout="hbox" gravity="center" >
     <icon id="sysid_icon" src="ICON_LOGO:16"/>
-      <text id="sysid_title">@string/title</text>
-      <window size="0,0" weight="1"/>
-      <imgbtn id="sysid_min" skin="_skin.sys.btn.minimize" animate="1" />
-      <window>
-        <imgbtn id="sysid_max" skin="_skin.sys.btn.maximize"  pos="0,0" animate="1" />
-        <imgbtn id="sysid_restore" skin="_skin.sys.btn.restore"  pos="0,0" show="0" animate="1" />
-      </window>
-      <imgbtn id="sysid_close" skin="_skin.sys.btn.close"  tip="close" animate="1"/>
-    </ncpainter>
+    <text id="sysid_title">@string/title</text>
+    <window size="0,0" weight="1"/>
+    <imgbtn id="sysid_min" skin="_skin.sys.btn.minimize" animate="1" />
+    <window>
+      <imgbtn id="sysid_max" skin="_skin.sys.btn.maximize"  pos="0,0" animate="1" />
+      <imgbtn id="sysid_restore" skin="_skin.sys.btn.restore"  pos="0,0" show="0" animate="1" />
+    </window>
+    <imgbtn id="sysid_close" skin="_skin.sys.btn.close"  tip="close" animate="1"/>
+  </ncpainter>
   <root width="600" height="400" >
     <sdlView size="-2,-2" name="sdl_view" >
       <window size="-2,-2" colorBkgnd="@color/white" name="sdl_back" layout="vbox">
