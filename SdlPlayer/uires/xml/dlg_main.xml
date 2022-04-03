@@ -19,19 +19,29 @@ translucent="0"
   </ncpainter>
   <root width="600" height="400" >
     <sdlView size="-2,-2" name="sdl_view" >
-      <window size="-2,-2" colorBkgnd="@color/white" name="sdl_back" layout="vbox">
+      <window pos="0,0" size="-2,-2" colorBkgnd="@color/white" name="sdl_back" layout="vbox">
         <window size="0,0" weight="1"/>
         <window size="-2,30" layout="hbox" gravity="center">
           <text text="url:"/>
-          <edit size="0,-2" weight="1" name="edit_url" text="d:\\test2.mp4" margin="1,1,1,1" colorBkgnd="@color/white"/>
+          <edit size="0,-2" weight="1" name="edit_url" text="d:\\test.rmvb" margin="1,1,1,1" colorBkgnd="@color/white"/>
           <button size="100,-2" name="btn_play" text="play"/>
         </window>
         <window size="0,0" weight="1"/>
       </window>
-      <window pos="0,-0,-0,@30" offset="0,-1" layout="hbox" gravity="center" colorBkgnd="@color/gray" alpha="200" visible="0" name="sdl_front">
-        <sliderbar size="0,-2" weight="1" name="slider_prog" min="0" max="100" value="0"/>
-        <text name="txt_duration"/>
-        <button size="100,-2" name="btn_stop" text="stop"/>
+      <window pos="0,0" size="-2,-2" layout="vbox" visible="0" name="sdl_front">
+        <scrollSubtitles size="-2,0" weight="1" visible="1" name="scroll_subtitles" rows="5" xInterval="10" lineHeight="30" yOffset="10" speed="1" clipClient="1">
+          <fonts>
+            <typefont type="0" color="rgb(0,0,0)"/>
+            <typefont type="1" font="face:华文彩云,adding:5,underline:1" color="rgb(255,0,0)"/>
+            <typefont type="2" font="face:隶书,adding:10,italic:1" color="rgb(0,255,0)"/>
+            <typefont type="3" font="style:StrokeAndFill,blurStyle:solid,blurRadius:3" color="rgb(0,0,255)"/>
+          </fonts>
+        </scrollSubtitles>
+        <window size="-2,30" layout="hbox" gravity="center" colorBkgnd="@color/gray" alpha="200" >
+          <sliderbar size="0,-2" weight="1" name="slider_prog" min="0" max="100" value="0"/>
+          <text name="txt_duration"/>
+          <button size="100,-2" name="btn_stop" text="stop"/>
+        </window>
       </window>
     </sdlView>
   </root>

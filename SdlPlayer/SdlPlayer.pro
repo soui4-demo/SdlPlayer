@@ -25,12 +25,14 @@ LIBS += SDL2.lib
 PRECOMPILED_HEADER = stdafx.h
 
 # Input
-HEADERS += SSdlView.h
+HEADERS += ctrls/SSdlView.h
+HEADERS += ctrls/SScrollSubtitles.h
 HEADERS += VideoBuiltinRender.h
 HEADERS += MainDlg.h
 
 
-SOURCES += SSdlView.cpp
+SOURCES += ctrls/SSdlView.cpp
+SOURCES += ctrls/SScrollSubtitles.cpp
 SOURCES += VideoBuiltinRender.cpp
 SOURCES += MainDlg.cpp
 SOURCES += SdlPlayer.cpp

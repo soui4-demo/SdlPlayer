@@ -5,7 +5,7 @@
 
 #include <list>
 #include "base/unknown.h"
-#include "SSdlView.h"
+#include "ctrls/SSdlView.h"
 
 using namespace SOUI;
 
