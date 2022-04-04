@@ -3,7 +3,7 @@
 
 SNSBEGIN
 
-SScrollSubtitles::SScrollSubtitles():m_nSpeed(1), m_nLineHeight(30), m_xInterval(10), m_iNextLine(0), m_yOffset(10)
+SScrollSubtitles::SScrollSubtitles():m_nSpeed(1), m_nLineHeight(30), m_xInterval(10), m_iNextLine(0), m_yOffset(10),m_nCount(0)
 	{
 	}
 
@@ -105,6 +105,13 @@ SScrollSubtitles::SScrollSubtitles():m_nSpeed(1), m_nLineHeight(30), m_xInterval
 
 	void SScrollSubtitles::OnNextFrame()
 	{
+		if(!IsVisible(TRUE))
+			return;
+		if((m_nCount++)%5!=0)
+		{
+			return;
+		}
+		m_nCount = 1;
 		CRect rcClient = GetClientRect();
 		SPOSITION pos = m_lstSubtitles.GetHeadPosition();
 		while (pos)

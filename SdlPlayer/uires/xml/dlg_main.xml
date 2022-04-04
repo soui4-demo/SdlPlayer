@@ -29,7 +29,7 @@ translucent="0"
         <window size="0,0" weight="1"/>
       </window>
       <window pos="0,0" size="-2,-2" layout="vbox" visible="0" name="sdl_front">
-        <scrollSubtitles size="-2,0" weight="1" visible="1" name="scroll_subtitles" rows="5" xInterval="10" lineHeight="30" yOffset="10" speed="1" clipClient="1">
+        <scrollSubtitles size="-2,0" weight="1" visible="1" name="scroll_subtitles" rows="5" xInterval="10" lineHeight="30" yOffset="10" speed="5" clipClient="1">
           <fonts>
             <typefont type="0" color="rgb(0,0,0)"/>
             <typefont type="1" font="face:华文彩云,adding:5,underline:1" color="rgb(255,0,0)"/>

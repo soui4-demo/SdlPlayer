@@ -59,6 +59,7 @@ class SScrollSubtitles : public SWindow, public ITimelineHandler
 		int					  m_iNextLine;  //next insert line
 
 		SMap<int,TypeFont>      m_mapTypeFont;
+		int					  m_nCount;
 	};
 
 SNSEND
