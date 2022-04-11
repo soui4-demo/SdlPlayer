@@ -45,7 +45,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/MP"
-				Optimization="2"
+				Optimization="0"
 				AdditionalIncludeDirectories=".,..\SDL2\include,base,transvod-pc2015\include,.,$(SOUI4PATH)/utilities/include,$(SOUI4PATH)/soui/include,$(SOUI4PATH)/components,$(SOUI4PATH)/config,..\..\soui4.git\tools\mkspecs\win32-msvc2008"
 				PreprocessorDefinitions="_WINDOWS,UNICODE,WIN32,QT_NO_DYNAMIC_CAST,NDEBUG"
 				GeneratePreprocessedFile="0"
@@ -60,7 +60,7 @@
 				ProgramDataBaseFileName="$(IntDir)"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
-				DebugInformationFormat="0"
+				DebugInformationFormat="1"
 				ForcedIncludeFiles="stdafx.h"
 			/>
 			<Tool
@@ -82,7 +82,7 @@
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(SOUI4PATH)\bin,..\Release"
-				GenerateDebugInformation="false"
+				GenerateDebugInformation="true"
 				ProgramDatabaseFile=""
 				SubSystem="2"
 				LinkTimeCodeGeneration="0"

@@ -10,6 +10,7 @@ translucent="0"
     <icon id="sysid_icon" src="ICON_LOGO:16"/>
     <text id="sysid_title">@string/title</text>
     <window size="0,0" weight="1"/>
+    <check name="chk_enable_subtitle" text="显示弹幕" checked="true"/>
     <imgbtn id="sysid_min" skin="_skin.sys.btn.minimize" animate="1" />
     <window>
       <imgbtn id="sysid_max" skin="_skin.sys.btn.maximize"  pos="0,0" animate="1" />
